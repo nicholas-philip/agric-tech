@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1036812190563",
+    "project_id": "agric-tech2",
+    "storage_bucket": "agric-tech2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036812190563:android:9a2dbcc830d8a9d9a0c956",
+        "android_client_info": {
+          "package_name": "com.agrictech.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1036812190563-05cei91visu2mjbtqu9bfsfhndf31isv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGzJlot0cTi1uICPMds_whyB4j0QnCdgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1036812190563-05cei91visu2mjbtqu9bfsfhndf31isv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1036812190563-kvig503h7fddreiu74b2as5sqjpu5rq7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.agrictech.firebase"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
