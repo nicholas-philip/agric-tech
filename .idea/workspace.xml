@@ -1,136 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="907f7592-f28a-4067-9b54-5cb588ac3f52" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/bson.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/bson.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/bson.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/bson.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/change_stream.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/change_stream.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/change_stream.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/change_stream.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/client-side-encryption/state_machine.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/client-side-encryption/state_machine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/client-side-encryption/state_machine.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/client-side-encryption/state_machine.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/aws_temporary_credentials.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/aws_temporary_credentials.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/aws_temporary_credentials.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/aws_temporary_credentials.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/gssapi.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/gssapi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/gssapi.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/gssapi.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/mongo_credentials.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/mongo_credentials.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/mongo_credentials.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/mongo_credentials.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/mongodb_aws.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/mongodb_aws.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/mongodb_aws.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/mongodb_aws.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/mongodb_oidc/k8s_machine_workflow.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/mongodb_oidc/k8s_machine_workflow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/mongodb_oidc/k8s_machine_workflow.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/mongodb_oidc/k8s_machine_workflow.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/mongodb_oidc/token_machine_workflow.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/mongodb_oidc/token_machine_workflow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/mongodb_oidc/token_machine_workflow.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/auth/mongodb_oidc/token_machine_workflow.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/connect.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/connect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/connect.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/connect.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/connection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/connection.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/connection.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/connection_pool.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/connection_pool.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/connection_pool.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/connection_pool.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/connection_pool_events.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/connection_pool_events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/connection_pool_events.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/connection_pool_events.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/handshake/client_metadata.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/handshake/client_metadata.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/handshake/client_metadata.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/handshake/client_metadata.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/wire_protocol/compression.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/wire_protocol/compression.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/wire_protocol/compression.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/cmap/wire_protocol/compression.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/connection_string.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/connection_string.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/connection_string.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/connection_string.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/db.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/db.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/deps.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/deps.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/deps.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/deps.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/error.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/error.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/error.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/error.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/gridfs/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/gridfs/upload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/gridfs/upload.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/gridfs/upload.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/mongo_client.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/mongo_client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/mongo_client.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/mongo_client.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/mongo_logger.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/mongo_logger.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/mongo_logger.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/mongo_logger.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/operations/execute_operation.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/operations/execute_operation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/operations/execute_operation.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/operations/execute_operation.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/operations/rename.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/operations/rename.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/monitor.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/monitor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/monitor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/monitor.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/server.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/server.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/server_description.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/server_description.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/server_description.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/server_description.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/server_selection.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/server_selection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/server_selection.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/server_selection.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/topology.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/topology.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/topology.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/topology.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/topology_description.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/topology_description.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/topology_description.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sdam/topology_description.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sessions.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sessions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sessions.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/sessions.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/utils.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/lib/utils.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/mongodb.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/mongodb.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/bson.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/bson.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/change_stream.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/change_stream.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/client-side-encryption/state_machine.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/client-side-encryption/state_machine.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/auth/aws_temporary_credentials.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/auth/aws_temporary_credentials.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/auth/gssapi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/auth/gssapi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/auth/mongo_credentials.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/auth/mongo_credentials.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/auth/mongodb_aws.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/auth/mongodb_aws.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/auth/mongodb_oidc/k8s_machine_workflow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/auth/mongodb_oidc/k8s_machine_workflow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/auth/mongodb_oidc/token_machine_workflow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/auth/mongodb_oidc/token_machine_workflow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/connect.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/connect.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/connection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/connection.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/connection_pool.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/connection_pool.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/connection_pool_events.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/connection_pool_events.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/handshake/client_metadata.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/handshake/client_metadata.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/wire_protocol/compression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/cmap/wire_protocol/compression.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/connection_string.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/connection_string.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/db.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/db.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/deps.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/deps.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/error.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/gridfs/upload.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/gridfs/upload.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/mongo_client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/mongo_client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/mongo_logger.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/mongo_logger.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/operations/execute_operation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/operations/execute_operation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/operations/rename.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/operations/rename.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/sdam/monitor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/sdam/monitor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/sdam/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/sdam/server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/sdam/server_description.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/sdam/server_description.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/sdam/server_selection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/sdam/server_selection.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/sdam/topology.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/sdam/topology.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/sdam/topology_description.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/sdam/topology_description.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/sessions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/sessions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/mongodb/src/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/mongodb/src/utils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/(auth)/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/(auth)/login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/(tabs)/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/(tabs)/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/_layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/_layout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="3AXnivG6VukAwvXVFOsAwQq3Y7b" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

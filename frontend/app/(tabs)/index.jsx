@@ -1,10 +1,41 @@
-import { Text, View, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
+
+import { Text, View, SafeAreaView, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import React from 'react';
-import { useRouter } from 'expo-router';
-import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';import { Ionicons } from '@expo/vector-icons';
+// 1. Import Firebase Auth
+import auth from '@react-native-firebase/auth';
 
 export default function HomeScreen() {
   const router = useRouter();
+
+  const handleLogout = async () => {
+    Alert.alert(
+      "Logout",
+      "Are you sure you want to log out?",
+      [
+        { text: "Cancel", style: "cancel" },
+        {
+          text: "Logout",
+          style: "destructive",
+          onPress: async () => {
+            try {
+              // 2. Sign out from Firebase
+              // This triggers the useEffect in your root _layout.jsx
+              // which will automatically redirect to the login screen.
+              await auth().signOut();
+
+              // 3. Optional: Manually replace the route for immediate feedback
+              router.replace('/(auth)/login');
+            } catch (error) {
+              console.error("Error logging out:", error);
+              Alert.alert("Error", "Failed to sign out. Please try again.");
+            }
+          }
+        }
+      ]
+    );
+  };
+
   return (
     <SafeAreaView className="flex-1 bg-gray-50">
       <ScrollView className="flex-1 px-6">
@@ -17,9 +48,10 @@ export default function HomeScreen() {
               Welcome to the future of farming
             </Text>
           </View>
-          <TouchableOpacity 
-            onPress={() => router.replace('/login')}
-            className="bg-red-50 p-3 rounded-2xl border border-red-100"
+
+          <TouchableOpacity
+            onPress={handleLogout}
+            className="bg-red-50 p-3 rounded-2xl border border-red-100 active:bg-red-100"
           >
             <Ionicons name="log-out-outline" size={24} color="#ef4444" />
           </TouchableOpacity>

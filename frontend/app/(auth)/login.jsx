@@ -1,5 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Alert, SafeAreaView, KeyboardAvoidingView, Platform, ScrollView, ActivityIndicator } from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Alert,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+  ActivityIndicator
+} from 'react-native';
+// Corrected SafeAreaView import to remove deprecation warning
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import auth from '@react-native-firebase/auth';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
@@ -30,18 +42,13 @@ export default function LoginScreen() {
   const signInWithGoogle = async () => {
     setLoading(true);
     try {
-      // Check if your device supports Google Play
       await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
-      // Get the users ID token
       const { data } = await GoogleSignin.signIn();
       const idToken = data.idToken;
 
-      // Create a Google credential with the token
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-
-      // Sign-in the user with the credential
       await auth().signInWithCredential(googleCredential);
-      
+
       Alert.alert("Success!", "Logged in with Google.");
       router.replace('/(tabs)');
     } catch (error) {
@@ -94,17 +101,16 @@ export default function LoginScreen() {
     } finally {
       setLoading(false);
     }
-
   };
 
   return (
     <SafeAreaView className="flex-1 bg-gray-50">
-      <KeyboardAvoidingView 
+      <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         className="flex-1"
       >
         <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center', padding: 24 }}>
-          
+
           <View className="items-center mb-10">
             <View className="w-20 h-20 bg-emerald-100 rounded-3xl items-center justify-center mb-6 shadow-sm">
               <View className="w-10 h-10 bg-emerald-500 rounded-md rotate-45" />
@@ -143,7 +149,7 @@ export default function LoginScreen() {
               />
             </View>
 
-            <TouchableOpacity 
+            <TouchableOpacity
               onPress={isLogin ? handleLogin : handleSignUp}
               disabled={loading}
               className={`bg-emerald-500 py-4 rounded-2xl items-center shadow-sm ${loading ? 'opacity-70' : ''}`}
