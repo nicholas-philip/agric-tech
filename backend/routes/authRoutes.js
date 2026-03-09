@@ -5,6 +5,7 @@ import { validate } from '../middleware/Validator.js';
 import {
   register,
   login,
+  firebaseLogin,
   getMe,
   updateDetails,
   updatePassword,
@@ -17,9 +18,9 @@ const router = express.Router();
 const registerValidation = [
   body('name').trim().notEmpty().withMessage('Name is required'),
   body('email').isEmail().withMessage('Please provide a valid email'),
-  body('phone').trim().notEmpty().withMessage('Phone number is required'),
-  body('password').isLength({ min: 6 }).withMessage('Password must be at least 6 characters'),
+  body('password').optional().isLength({ min: 6 }).withMessage('Password must be at least 6 characters'),
   body('role')
+    .optional()
     .isIn(['farmer', 'investor', 'agent', 'agronomist', 'agrodealer'])
     .withMessage('Invalid role'),
 ];
@@ -31,6 +32,7 @@ const loginValidation = [
 
 router.post('/register', registerValidation, validate, register);
 router.post('/login', loginValidation, validate, login);
+router.post('/firebase-login', firebaseLogin);
 router.get('/me', protect, getMe);
 router.put('/update', protect, updateDetails);
 router.put('/update-password', protect, updatePassword);

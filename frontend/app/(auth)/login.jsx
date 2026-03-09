@@ -13,13 +13,66 @@ import {
 // Corrected SafeAreaView import to remove deprecation warning
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
-import auth from '@react-native-firebase/auth';
+import auth, { 
+  signInWithEmailAndPassword, 
+  createUserWithEmailAndPassword, 
+  signInWithCredential, 
+  GoogleAuthProvider 
+} from '@react-native-firebase/auth';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { Ionicons } from '@expo/vector-icons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { ENDPOINTS } from '../../constants';
+
+// We removed the ROLES constant as the role is chosen after registration now.
+
+
+const RoleButton = ({ label, icon, isSelected, onPress }) => (
+  <TouchableOpacity
+    onPress={onPress}
+    activeOpacity={0.7}
+    style={{
+      flex: 1,
+      marginHorizontal: 4,
+      padding: 12,
+      borderRadius: 16,
+      borderWidth: 1,
+      borderColor: isSelected ? '#10b981' : '#e5e7eb',
+      backgroundColor: isSelected ? '#10b981' : '#ffffff',
+      alignItems: 'center',
+      justifyContent: 'center',
+      // Manual shadow for stability
+      shadowColor: "#000",
+      shadowOffset: { width: 0, height: 1 },
+      shadowOpacity: 0.1,
+      shadowRadius: 2,
+      elevation: 2,
+    }}
+  >
+    <Ionicons 
+      name={icon} 
+      size={20} 
+      color={isSelected ? 'white' : '#10b981'} 
+      style={{ marginBottom: 4 }}
+    />
+    <Text 
+      style={{
+        fontSize: 10,
+        fontWeight: 'bold',
+        color: isSelected ? 'white' : '#047857',
+        textAlign: 'center'
+      }}
+    >
+      {label}
+    </Text>
+  </TouchableOpacity>
+);
 
 export default function LoginScreen() {
   const router = useRouter();
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [isLogin, setIsLogin] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -46,8 +99,8 @@ export default function LoginScreen() {
       const { data } = await GoogleSignin.signIn();
       const idToken = data.idToken;
 
-      const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-      await auth().signInWithCredential(googleCredential);
+      const googleCredential = GoogleAuthProvider.credential(idToken);
+      await signInWithCredential(auth(), googleCredential);
 
       Alert.alert("Success!", "Logged in with Google.");
       router.replace('/(tabs)');
@@ -61,18 +114,40 @@ export default function LoginScreen() {
 
   const handleSignUp = async () => {
     if (!validateInput()) return;
+    if (!isLogin && (!name.trim() || !phone.trim())) {
+      Alert.alert('Missing Fields', 'Name and Phone are required for registration.');
+      return;
+    }
+
     setLoading(true);
     try {
-      const userCredential = await auth().createUserWithEmailAndPassword(email, password);
+      const userCredential = await createUserWithEmailAndPassword(auth(), email, password);
       const user = userCredential.user;
-      console.log('User created:', user);
-      Alert.alert("Success!", "Your account has been created!");
-      router.replace('/(tabs)');
+      
+      // Sync with MongoDB backend
+      const idToken = await user.getIdToken();
+      const response = await fetch(ENDPOINTS.FIREBASE_LOGIN, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          idToken,
+          name: name,
+          phone: phone
+        })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        await AsyncStorage.setItem('userToken', result.data.token);
+        console.log('User synced with backend:', result.data.user);
+        Alert.alert("Success!", "Account created and synced successfully!");
+        router.replace('/(tabs)');
+      } else {
+        throw new Error(result.message || 'Failed to sync with backend');
+      }
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
         Alert.alert("Error", "That email address is already in use!");
-      } else if (error.code === 'auth/invalid-email') {
-        Alert.alert("Error", "That email address is invalid!");
       } else {
         Alert.alert("Error", error.message);
       }
@@ -85,7 +160,7 @@ export default function LoginScreen() {
     if (!validateInput()) return;
     setLoading(true);
     try {
-      const userCredential = await auth().signInWithEmailAndPassword(email, password);
+      const userCredential = await signInWithEmailAndPassword(auth(), email, password);
       const user = userCredential.user;
       console.log('User logged in:', user);
       Alert.alert("Success!", "You have successfully logged in.");
@@ -104,7 +179,7 @@ export default function LoginScreen() {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#f9fafb' }}>
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         className="flex-1"
@@ -117,10 +192,42 @@ export default function LoginScreen() {
             </View>
             <Text className="text-4xl font-extrabold text-emerald-800 tracking-tight text-center">
               AgricTech
+
             </Text>
             <Text className="text-lg text-emerald-600 font-medium text-center mt-2">
               {isLogin ? 'Sign in to your account' : 'Create a new account'}
             </Text>
+          </View>
+
+          {!isLogin && (
+            <View className="bg-white rounded-3xl p-6 shadow-sm border border-emerald-50 mb-0">
+               <View className="mb-4">
+                <Text className="text-gray-700 font-bold mb-2 ml-1">Full Name</Text>
+                <TextInput
+                  className="bg-gray-50 border border-gray-200 text-gray-800 rounded-2xl p-4 text-lg"
+                  placeholder="John Doe"
+                  placeholderTextColor="#9ca3af"
+                  onChangeText={setName}
+                  value={name}
+                />
+              </View>
+
+              <View className="mb-0">
+                <Text className="text-gray-700 font-bold mb-2 ml-1">Phone Number</Text>
+                <TextInput
+                  className="bg-gray-50 border border-gray-200 text-gray-800 rounded-2xl p-4 text-lg"
+                  placeholder="+254 700 000 000"
+                  placeholderTextColor="#9ca3af"
+                  onChangeText={setPhone}
+                  value={phone}
+                  keyboardType="phone-pad"
+                />
+              </View>
+            </View>
+          )}
+
+          <View className="mt-6 mb-6">
+            {/* Choose role removed from here, user picks role after login */}
           </View>
 
           <View className="bg-white rounded-3xl p-6 shadow-sm border border-emerald-50 mb-6">

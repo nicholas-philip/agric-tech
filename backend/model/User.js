@@ -17,20 +17,23 @@ const userSchema = new mongoose.Schema(
     },
     phone: {
       type: String,
-      required: [true, 'Phone number is required'],
       unique: true,
       trim: true,
+      sparse: true, // Allow multiple nulls if not provided
     },
     password: {
       type: String,
-      required: [true, 'Password is required'],
       minlength: 6,
       select: false,
+    },
+    firebaseUid: {
+      type: String,
+      unique: true,
+      sparse: true,
     },
     role: {
       type: String,
       enum: ['farmer', 'investor', 'agent', 'agronomist', 'agrodealer'],
-      required: [true, 'Role is required'],
     },
     nationalId: {
       type: String,

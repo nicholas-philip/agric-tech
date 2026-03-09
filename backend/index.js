@@ -14,6 +14,7 @@ import investorRoutes from './routes/investorRoute.js';
 import agronomistRoutes from './routes/agronomistRoute.js';
 import creditRoutes from './routes/creditRoute.js';
 import cooperativeRoutes from './routes/cooperativeRoute.js';
+import './config/firebase-admin.js'; // Initialize Firebase Admin
 import errorHandler from './middleware/ErrorHandler.js';
 // Initialize express app
 const app = express();

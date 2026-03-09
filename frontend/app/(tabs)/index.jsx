@@ -3,7 +3,7 @@ import { Text, View, SafeAreaView, ScrollView, TouchableOpacity, Alert } from 'r
 import React from 'react';
 import { useRouter } from 'expo-router';import { Ionicons } from '@expo/vector-icons';
 // 1. Import Firebase Auth
-import auth from '@react-native-firebase/auth';
+import auth, { signOut } from '@react-native-firebase/auth';
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -19,12 +19,10 @@ export default function HomeScreen() {
           style: "destructive",
           onPress: async () => {
             try {
-              // 2. Sign out from Firebase
-              // This triggers the useEffect in your root _layout.jsx
-              // which will automatically redirect to the login screen.
-              await auth().signOut();
-
-              // 3. Optional: Manually replace the route for immediate feedback
+              const currentUser = auth().currentUser;
+              if (currentUser) {
+                await signOut(auth());
+              }
               router.replace('/(auth)/login');
             } catch (error) {
               console.error("Error logging out:", error);

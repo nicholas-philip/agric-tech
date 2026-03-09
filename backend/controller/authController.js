@@ -14,7 +14,7 @@ const generateToken = (id) => {
 // @access  Public
 const register = async (req, res, next) => {
   try {
-    const { name, email, phone, password, role, ...otherFields } = req.body;
+    const { name, email, phone, password } = req.body;
 
     // Create user
     const user = await User.create({
@@ -22,14 +22,7 @@ const register = async (req, res, next) => {
       email,
       phone,
       password,
-      role,
-      ...otherFields
     });
-
-    // Create credit profile for farmers
-    if (role === 'farmer') {
-      await CreditProfile.create({ farmer: user._id });
-    }
 
     // Generate token
     const token = generateToken(user._id);
@@ -114,6 +107,83 @@ const login = async (req, res, next) => {
   }
 };
 
+// @desc    Login with Firebase
+// @route   POST /api/auth/firebase-login
+// @access  Public
+const firebaseLogin = async (req, res, next) => {
+  try {
+    const { idToken, name: nameFromClient, phone: phoneFromClient } = req.body;
+
+    if (!idToken) {
+      return res.status(400).json({
+        success: false,
+        message: 'Firebase ID Token is required'
+      });
+    }
+
+    // Verify Firebase token
+    // We import admin inside to avoid circular dependencies if any
+    const admin = (await import('../config/firebase-admin.js')).default;
+    
+    if (!admin) {
+      return res.status(500).json({
+        success: false,
+        message: 'Firebase Admin SDK not initialized'
+      });
+    }
+
+    const decodedToken = await admin.auth().verifyIdToken(idToken);
+    const { uid, email, name: nameFromFirebase, picture } = decodedToken;
+
+    // Find or create user in MongoDB
+    let user = await User.findOne({ 
+      $or: [{ firebaseUid: uid }, { email }]
+    });
+
+    if (!user) {
+      // Create new user if not exists
+      user = await User.create({
+        firebaseUid: uid,
+        email,
+        name: nameFromClient || nameFromFirebase || email.split('@')[0],
+        phone: phoneFromClient,
+        isActive: true,
+      });
+    } else {
+      // User exists, check if we need to link UID
+      let updated = false;
+      if (!user.firebaseUid) {
+        user.firebaseUid = uid;
+        updated = true;
+      }
+      
+      // Optional: If you want to allow role updates via social login synchronization, 
+      // you could add logic here, but usually roles are sticky.
+      
+      if (updated) await user.save();
+    }
+
+    // Generate backend token (optional, or just use Firebase)
+    const token = generateToken(user._id);
+
+    res.status(200).json({
+      success: true,
+      data: {
+        user: user.toPublicJSON(),
+        token
+      }
+    });
+
+  } catch (error) {
+    console.error('Firebase Login Error:', error.message);
+    res.status(401).json({
+      success: false,
+      message: 'Invalid Firebase Token',
+      error: error.message
+    });
+  }
+};
+
 // @desc    Get current logged in user
 // @route   GET /api/auth/me
 // @access  Private
@@ -138,7 +208,8 @@ const login = async (req, res, next) => {
     const fieldsToUpdate = {
       name: req.body.name,
       phone: req.body.phone,
-      location: req.body.location
+      location: req.body.location,
+      role: req.body.role // Permit updating role after registration
     };
 
     // Role-specific fields
@@ -158,6 +229,14 @@ const login = async (req, res, next) => {
       new: true,
       runValidators: true
     });
+
+    // Create credit profile for farmers if role is set to farmer
+    if (user.role === 'farmer') {
+      const existingProfile = await CreditProfile.findOne({ farmer: user._id });
+      if (!existingProfile) {
+        await CreditProfile.create({ farmer: user._id });
+      }
+    }
 
     res.status(200).json({
       success: true,
@@ -215,6 +294,7 @@ const login = async (req, res, next) => {
 export {
   register,
   login,
+  firebaseLogin,
   getMe,
   updateDetails,
   updatePassword

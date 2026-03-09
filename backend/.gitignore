@@ -4,3 +4,6 @@ dist/
 build/
 .DS_Store
 *.log
+*.json
+!package.json
+!package-lock.json
