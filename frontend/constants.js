@@ -11,4 +11,9 @@ export const ENDPOINTS = {
   AUTH: `${API_BASE_URL}/auth`,
   FIREBASE_LOGIN: `${API_BASE_URL}/auth/firebase-login`,
   ME: `${API_BASE_URL}/auth/me`,
+  FARMS: `${API_BASE_URL}/farms`,
+  ACTIVITIES: `${API_BASE_URL}/activities`,
+  BATCHES: `${API_BASE_URL}/batches`,
+  CLIMATE: `${API_BASE_URL}/climate`,
+  AGRODEALERS: `${API_BASE_URL}/agrodealers`,
 };

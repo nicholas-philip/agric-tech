@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1036812190563-fmv60d7931vac4b6k9ileh44828s5ri3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.agrictech.firebase",
+            "certificate_hash": "3420d8af4baea7e051f5a259ebaf4623b1c8eead"
+          }
+        },
+        {
           "client_id": "1036812190563-05cei91visu2mjbtqu9bfsfhndf31isv.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -14,7 +14,7 @@ const generateToken = (id) => {
 // @access  Public
 const register = async (req, res, next) => {
   try {
-    const { name, email, phone, password } = req.body;
+    const { name, email, phone, password, role } = req.body;
 
     // Create user
     const user = await User.create({
@@ -22,7 +22,13 @@ const register = async (req, res, next) => {
       email,
       phone,
       password,
+      role,
     });
+
+    // Create credit profile for farmers
+    if (user.role === 'farmer') {
+      await CreditProfile.create({ farmer: user._id });
+    }
 
     // Generate token
     const token = generateToken(user._id);
@@ -112,7 +118,7 @@ const login = async (req, res, next) => {
 // @access  Public
 const firebaseLogin = async (req, res, next) => {
   try {
-    const { idToken, name: nameFromClient, phone: phoneFromClient } = req.body;
+    const { idToken, name: nameFromClient, phone: phoneFromClient, role: roleFromClient } = req.body;
 
     if (!idToken) {
       return res.status(400).json({
@@ -147,8 +153,14 @@ const firebaseLogin = async (req, res, next) => {
         email,
         name: nameFromClient || nameFromFirebase || email.split('@')[0],
         phone: phoneFromClient,
+        role: roleFromClient,
         isActive: true,
       });
+
+      // Create credit profile for farmers
+      if (user.role === 'farmer') {
+        await CreditProfile.create({ farmer: user._id });
+      }
     } else {
       // User exists, check if we need to link UID
       let updated = false;
